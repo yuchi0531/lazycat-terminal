@@ -187,7 +187,7 @@ public class ConfirmDialog : Gtk.Widget {
         button_box.set_halign(Gtk.Align.CENTER);
         button_box.set_margin_bottom(17);
 
-        confirm_button = new Gtk.Button.with_label("Confirm");
+        confirm_button = new Gtk.Button.with_label("確認");
         confirm_button.add_css_class("confirm-button");
         confirm_button.clicked.connect(() => {
             confirmed();

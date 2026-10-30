@@ -874,24 +874,24 @@ public class TerminalWindow : ShadowWindow {
         ContextMenuItemSpec[] items = {};
 
         if (include_url_actions) {
-            items += ContextMenuItemSpec.action("open_url", "打开链接");
-            items += ContextMenuItemSpec.action("copy_url", "复制链接");
+            items += ContextMenuItemSpec.action("open_url", "リンクを開く");
+            items += ContextMenuItemSpec.action("copy_url", "リンクをコピー");
             items += ContextMenuItemSpec.divider();
         }
 
-        items += ContextMenuItemSpec.action("copy", "复制");
-        items += ContextMenuItemSpec.action("paste", "粘贴");
-        items += ContextMenuItemSpec.action("select_all", "全选");
+        items += ContextMenuItemSpec.action("copy", "コピー");
+        items += ContextMenuItemSpec.action("paste", "貼り付け");
+        items += ContextMenuItemSpec.action("select_all", "すべて選択");
         items += ContextMenuItemSpec.divider();
-        items += ContextMenuItemSpec.action("search", "搜索");
-        items += ContextMenuItemSpec.action("copy_last_output", "复制上一条命令输出");
+        items += ContextMenuItemSpec.action("search", "検索");
+        items += ContextMenuItemSpec.action("copy_last_output", "前回のコマンド出力をコピー");
         items += ContextMenuItemSpec.divider();
-        items += ContextMenuItemSpec.action("split_vertical", "垂直分屏");
-        items += ContextMenuItemSpec.action("split_horizontal", "水平分屏");
-        items += ContextMenuItemSpec.action("move_to_new_tab", "移出到新标签页", tab.has_multiple_terminals());
+        items += ContextMenuItemSpec.action("split_vertical", "垂直分割");
+        items += ContextMenuItemSpec.action("split_horizontal", "水平分割");
+        items += ContextMenuItemSpec.action("move_to_new_tab", "新しいタブに移動", tab.has_multiple_terminals());
         items += ContextMenuItemSpec.divider();
-        items += ContextMenuItemSpec.action("close_terminal", "关闭当前窗格");
-        items += ContextMenuItemSpec.action("close_other_terminals", "关闭其他窗格", tab.has_multiple_terminals());
+        items += ContextMenuItemSpec.action("close_terminal", "現在のペインを閉じる");
+        items += ContextMenuItemSpec.action("close_other_terminals", "他のペインを閉じる", tab.has_multiple_terminals());
 
         return items;
     }
@@ -903,16 +903,16 @@ public class TerminalWindow : ShadowWindow {
         bool can_move_right = tab_index >= 0 && tab_index < count - 1;
 
         return {
-            ContextMenuItemSpec.action("new_tab", "新建标签页"),
-            ContextMenuItemSpec.action("close_tab", "关闭当前标签页"),
+            ContextMenuItemSpec.action("new_tab", "新しいタブ"),
+            ContextMenuItemSpec.action("close_tab", "現在のタブを閉じる"),
             ContextMenuItemSpec.divider(),
-            ContextMenuItemSpec.action("previous_tab", "切换到上一个标签页", can_cycle),
-            ContextMenuItemSpec.action("next_tab", "切换到下一个标签页", can_cycle),
+            ContextMenuItemSpec.action("previous_tab", "前のタブに切り替え", can_cycle),
+            ContextMenuItemSpec.action("next_tab", "次のタブに切り替え", can_cycle),
             ContextMenuItemSpec.divider(),
-            ContextMenuItemSpec.action("move_first", "移到最前", can_move_left),
-            ContextMenuItemSpec.action("move_left", "左移", can_move_left),
-            ContextMenuItemSpec.action("move_right", "右移", can_move_right),
-            ContextMenuItemSpec.action("move_end", "移到最后", can_move_right)
+            ContextMenuItemSpec.action("move_first", "先頭に移動", can_move_left),
+            ContextMenuItemSpec.action("move_left", "左に移動", can_move_left),
+            ContextMenuItemSpec.action("move_right", "右に移動", can_move_right),
+            ContextMenuItemSpec.action("move_end", "最後に移動", can_move_right)
         };
     }
 

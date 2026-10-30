@@ -1782,7 +1782,7 @@ public class TerminalTab : Gtk.Box {
 
         // Create search entry
         search_entry = new Gtk.Entry();
-        search_entry.set_placeholder_text("Search...");
+        search_entry.set_placeholder_text("検索...");
         search_entry.set_hexpand(true);
         search_entry.add_css_class("search-entry");
 
@@ -2194,9 +2194,9 @@ public class TerminalTab : Gtk.Box {
 
         string message;
         if (specific_terminal != null) {
-            message = "Process is running in terminal\nConfirm to terminate?";
+            message = "ターミナルでプロセスが実行中です\n終了しますか？";
         } else {
-            message = "Processes are running in terminals\nConfirm to terminate all?";
+            message = "ターミナルでプロセスが実行中です\nすべて終了しますか？";
         }
 
         window.show_confirm_dialog(message, foreground_color, background_color, () => {
@@ -2242,7 +2242,7 @@ public class TerminalTab : Gtk.Box {
         if (!has_print_exit_notify) {
             GLib.Timeout.add(200, () => {
                 // Use feed to directly output text to terminal without spawning a new process
-                string message = "\r\nCommand has been completed, press ENTER to exit the terminal.\r\n";
+                string message = "\r\nコマンドが完了しました。ENTER を押してターミナルを終了してください。\r\n";
                 terminal.feed(message.data);
 
                 return false;
